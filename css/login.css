@@ -1,0 +1,59 @@
+/* Login Page Styles */
+
+body.login-page {
+    background-color: #c64522;
+    color: white;
+}
+
+#body {
+    background-color: #c64522;
+    color: white;
+    padding: var(--spacing-md);
+    text-align: center;
+    min-height: calc(100vh - 200px);
+}
+
+#body h3 {
+    color: white;
+    margin-top: var(--spacing-lg);
+}
+
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus {
+    box-shadow: 0 0 0 3px rgba(198, 69, 34, 0.25);
+}
+
+.login-form label {
+    color: var(--color-white);
+    text-align: left;
+}
+
+.password-hint {
+    font-size: var(--font-size-sm);
+    color: #f0f0f0;
+    margin-top: -var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.signup-link {
+    margin-top: var(--spacing-md);
+    text-align: center;
+}
+
+.signup-link a {
+    color: #ffeb3b;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.signup-link a:hover {
+    color: var(--color-white);
+}

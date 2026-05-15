@@ -1,0 +1,387 @@
+/* ============================================================================
+   GLOBAL STYLES - HTML_CSS_JavaScript Project
+   ============================================================================ */
+
+:root {
+    /* Color Palette */
+    --color-primary: #007BFF;
+    --color-primary-dark: #0056b3;
+    --color-primary-light: #4CAF50;
+    --color-primary-light-dark: #45a049;
+    --color-success: #3e8e41;
+    --color-danger: #dc4c46;
+    --color-warning: #ff9800;
+    --color-info: #17a2b8;
+    --color-light: #f4f4f4;
+    --color-dark: #333;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-cyan: #00bcd4;
+    --color-gray: #ccc;
+    --color-orange: #c64522;
+
+    /* Spacing */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+    --spacing-xl: 60px;
+
+    /* Typography */
+    --font-family-base: Arial, Helvetica, sans-serif;
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-lg: 20px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 32px;
+
+    /* Border Radius */
+    --border-radius: 5px;
+    --border-radius-lg: 10px;
+
+    /* Transitions */
+    --transition: all 0.3s ease;
+}
+
+/* ============================================================================
+   BASE RESET & NORMALIZATION
+   ============================================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-white);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--color-primary-dark);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--color-gray);
+    margin: var(--spacing-md) 0;
+}
+
+/* ============================================================================
+   HEADER & NAVIGATION
+   ============================================================================ */
+
+header {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: var(--spacing-md) 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header a {
+    color: var(--color-white);
+    transition: var(--transition);
+}
+
+header a:hover {
+    color: var(--color-cyan);
+    text-decoration: none;
+}
+
+#header {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+#header img {
+    border: 2px solid #18ac16;
+    border-radius: var(--border-radius-lg);
+    transition: var(--transition);
+}
+
+#header img:hover {
+    border-color: var(--color-danger);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    text-align: center;
+}
+
+nav div {
+    margin: var(--spacing-sm) 0;
+}
+
+nav a {
+    display: inline-block;
+    margin: 0 var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    transition: var(--transition);
+}
+
+nav a:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+footer {
+    background-color: var(--color-cyan);
+    color: var(--color-black);
+    text-align: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin-top: var(--spacing-xl);
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: var(--color-black);
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--color-primary);
+}
+
+/* ============================================================================
+   FORMS
+   ============================================================================ */
+
+form {
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    color: var(--color-dark);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid var(--color-gray);
+    border-radius: var(--border-radius);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    transition: var(--transition);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+input[type="submit"],
+button {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+input[type="submit"]:active,
+button:active {
+    transform: translateY(2px);
+}
+
+/* ============================================================================
+   TABLES
+   ============================================================================ */
+
+table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table caption {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #18ac16;
+    margin-bottom: var(--spacing-md);
+}
+
+table th,
+table td {
+    border: 1px solid var(--color-gray);
+    padding: var(--spacing-sm);
+    text-align: center;
+}
+
+table th {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+table tbody tr:hover {
+    background-color: var(--color-light);
+}
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+
+.p-1 { padding: var(--spacing-xs); }
+.p-2 { padding: var(--spacing-sm); }
+.p-3 { padding: var(--spacing-md); }
+.p-4 { padding: var(--spacing-lg); }
+
+.rounded {
+    border-radius: var(--border-radius);
+}
+
+.rounded-lg {
+    border-radius: var(--border-radius-lg);
+}
+
+.shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 768px) {
+    body {
+        font-size: var(--font-size-sm);
+    }
+
+    nav a {
+        display: block;
+        margin: var(--spacing-xs) 0;
+    }
+
+    table {
+        font-size: var(--font-size-sm);
+    }
+
+    table th,
+    table td {
+        padding: var(--spacing-xs);
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+
+    form {
+        max-width: 100%;
+    }
+
+    button, input[type="submit"] {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+}

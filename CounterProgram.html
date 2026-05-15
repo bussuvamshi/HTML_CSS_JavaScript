@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Counter</title>
+    <meta name="description" content="Interactive counter application with increase, decrease, and reset functionality">
+    <title>Counter App</title>
+    <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="CounterProgram.css">
 </head>
 <body>
-    <label id="Counter">0</label> <br>
-    <div id="buttons">
-        <button id="decrease" class="btn">Decrease</button>
-        <button id="reset" class="btn">Reset</button>
-        <button id="increase" class="btn">Increase</button>
-        
-    </div>
-    <script> src="CounterProgram.js" </script>
+    <main>
+        <h1>Counter Application</h1>
+        <div class="counter-container">
+            <output id="Counter" aria-label="Current counter value">0</output>
+            <div id="buttons" role="group" aria-labelledby="counter-instructions">
+                <p id="counter-instructions" class="sr-only">Use the buttons below to control the counter</p>
+                <button id="decrease" class="btn" aria-label="Decrease counter by 1">Decrease</button>
+                <button id="reset" class="btn" aria-label="Reset counter to 0">Reset</button>
+                <button id="increase" class="btn" aria-label="Increase counter by 1">Increase</button>
+            </div>
+        </div>
+    </main>
+    <script src="CounterProgram.js"></script>
 </body>
 </html>

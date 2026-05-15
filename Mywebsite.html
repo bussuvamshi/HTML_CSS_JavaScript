@@ -56,48 +56,6 @@
     </form>
 </body>
 </html>
-
-<!-- filepath: c:\Users\bussu\Mywebsite\server.js -->
-<script>
-    const express = require('express');
-    const bodyParser = require('body-parser');
-    const sql = require('mssql');
-
-    const app = express();
-    const port = 3000;
-
-    // Middleware to parse form data
-    app.use(bodyParser.urlencoded({ extended: true }));
-
-    // MSSQL database configuration
-    const dbConfig = {
-        user: 'bussu', // Replace with your DB username
-        password: 'Bussu@007', // Replace with your DB password
-        server: 'VAMSHIBUSSU', // Replace with your server name or IP 
-        database: 'SGHS', // Replace with your database name
-        options: {
-            encrypt: true, // Use this if you're connecting to Azure
-            trustServerCertificate: true, // Use this for local development
-        },
-    };
-
-    // Route to handle form submission
-    app.post('/login', async (req, res) => {
-        const { username, password } = req.body;
-
-        try {
-            // Connect to the database
-            const pool = await sql.connect(dbConfig);
-
-            // Insert data into the database
-            const result = await pool.request()
-                .input('username', sql.VarChar, username)
-                .input('password', sql.VarChar, password)
-                .query('INSERT INTO Users (Username, Password) VALUES (@username, @password)');
-
-            res.send('Data stored successfully!');
-        } catch (err) {
-            console.error('Database error:', err);
             res.status(500).send('Error storing data.');
         } finally {
             sql.close(); // Close the database connection

@@ -3,73 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login/Signup</title>
+    <meta name="description" content="Login and signup page for Keysight Technologies">
+    <meta name="author" content="Vamshi">
+    <title>Login/Signup - Keysight</title>
     <link rel="icon" href="Media/Favicon.png" type="image/png">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: black;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-        header a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        header a:hover {
-            text-decoration: underline;
-        }
-        #header img {
-            border: 2px solid rgb(24, 172, 22);
-            border-radius: 10px;
-        }
-        #header img:hover {
-            border: 2px solid red;
-        }
-        #body {
-            background-color: rgb(198, 69, 34);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        form {
-            margin: 0 auto;
-            max-width: 300px;
-            text-align: left;
-        }
-        form label, form input, form p {
-            display: block;
-            margin-bottom: 10px;
-        }
-        form input {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        footer {
-            background-color: cyan;
-            text-align: center;
-            padding: 20px 0;
-        }
-        footer a {
-            color: black;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
-<body>
+<body class="login-page">
     <header>
         <div id="header">
-            <a href="https://www.keysight.com/us/en/home.html">
+            <a href="https://www.keysight.com/us/en/home.html" target="_blank" rel="noopener noreferrer">
                 <img src="Media/Keysight logo.png" alt="Keysight Logo" width="150" height="50">
             </a>
             <br>
@@ -82,22 +26,26 @@
         </nav>
         <hr>
     </header>
-    <div id="body">
-        <h3>Login/Signup</h3>
+    <main id="body">
+        <h1>Login/Signup</h1>
         <form action="submit_form.php" method="post">
-            <label for="name">Name*:</label>
+            <label for="name">Name <span aria-label="required">*</span>:</label>
             <input type="text" id="name" name="name" placeholder="Enter Full Name" required>
             
-            <label for="email">Email*:</label>
+            <label for="email">Email <span aria-label="required">*</span>:</label>
             <input type="email" id="email" name="email" placeholder="username@keysight.com" required>
             
-            <label for="password">Password*:</label>
-            <input type="password" id="password" name="password" placeholder="abc1234" minlength="5" maxlength="7" required>
+            <label for="password">Password <span aria-label="required">*</span>:</label>
+            <input type="password" id="password" name="password" placeholder="••••••" minlength="5" maxlength="7" required>
+            <p class="password-hint">Password must be 5-7 characters long</p>
             
             <input type="submit" value="Submit">
-            <p>First time to page? Please <a href="Signup.html" target="_blank">Sign-up</a>.</p>
+            <p class="signup-link">First time on this page? Please <a href="Signup.html" target="_blank">Sign-up</a>.</p>
         </form>
-    </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 Keysight Technologies. All rights reserved.</p>
+    </footer>
     <footer>
         <div id="footer">
             <h2>Thanks for contacting us!<br>We will get back to you soon.<br>
