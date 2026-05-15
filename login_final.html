@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to DevHub - Your premium development community">
+    <meta name="author" content="DevHub Team">
+    <title>Login - DevHub</title>
+    <link rel="icon" href="Media/Favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="login-page">
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span>DevHub</span>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="signup.html" class="nav-button">Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="login-container">
+        <div class="login-header">
+            <h1>Welcome Back</h1>
+            <p>Sign in to your DevHub account</p>
+        </div>
+
+        <form method="post" action="#" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password <span class="required">*</span></label>
+                <input type="password" id="password" name="password" placeholder="••••••••" required>
+                <p class="password-hint">Must be at least 6 characters</p>
+            </div>
+
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" name="remember">
+                    Remember me
+                </label>
+                <a href="#forgot-password">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+        </form>
+
+        <div class="form-divider">
+            <span>Or continue with</span>
+        </div>
+
+        <div class="social-login">
+            <a href="#" class="social-btn">
+                <span>🔵</span> GitHub
+            </a>
+            <a href="#" class="social-btn">
+                <span>🔴</span> Google
+            </a>
+        </div>
+
+        <p class="signup-link">
+            Don't have an account? <a href="signup.html">Create one</a>
+        </p>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DevHub. All rights reserved. | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (email && password) {
+                alert('Login attempted with: ' + email);
+                // In real application, send credentials to server
+            }
+        }
+    </script>
+</body>
+</html>
