@@ -1,0 +1,196 @@
+/* ============================================================================
+   Tools/Counter Page Styles
+   ============================================================================ */
+
+.tools-hero {
+    background: linear-gradient(135deg, var(--color-darker) 0%, #1a1f35 100%);
+    color: var(--color-white);
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.tools-hero h1 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+}
+
+.tools-hero p {
+    color: var(--color-gray-300);
+    font-size: var(--font-size-lg);
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-2xl) 0;
+}
+
+.tool-card {
+    background: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid var(--color-gray-100);
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary);
+}
+
+.tool-card h3 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-darker);
+}
+
+.tool-card p {
+    color: var(--color-gray-500);
+    margin-bottom: var(--spacing-md);
+}
+
+.tool-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    display: block;
+}
+
+/* Counter Tool Specific */
+.counter-tool-section {
+    margin-top: var(--spacing-2xl);
+    padding-top: var(--spacing-2xl);
+    border-top: 2px solid var(--color-gray-100);
+}
+
+.counter-tool-section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-dark);
+}
+
+.counter-container-tool {
+    background: linear-gradient(135deg, var(--color-lighter) 0%, rgba(243, 244, 246, 0.5) 100%);
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius-lg);
+    max-width: 500px;
+    margin: 0 auto var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.counter-display {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--color-darker);
+    text-align: center;
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-lg);
+    background: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.15);
+}
+
+.counter-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: var(--spacing-lg) 0;
+}
+
+.counter-buttons .btn {
+    min-width: 100px;
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.counter-buttons .btn:focus,
+.counter-buttons .btn:active {
+    transform: scale(0.98);
+}
+
+.tool-info {
+    background: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    color: var(--color-gray-600);
+    border-left: 4px solid var(--color-primary);
+}
+
+.tool-info strong {
+    color: var(--color-dark);
+}
+
+.usage-guide {
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-lg);
+    background: var(--color-lighter);
+    border-radius: var(--border-radius-lg);
+}
+
+.usage-guide h3 {
+    color: var(--color-darker);
+    margin-bottom: var(--spacing-md);
+}
+
+.usage-guide ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 2;
+}
+
+.usage-guide li {
+    padding-left: var(--spacing-lg);
+    position: relative;
+    color: var(--color-gray-700);
+}
+
+.usage-guide li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-success);
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tools-hero {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .counter-display {
+        font-size: 3rem;
+        min-height: 100px;
+    }
+
+    .counter-buttons {
+        flex-direction: column;
+    }
+
+    .counter-buttons .btn {
+        width: 100%;
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .counter-display {
+        font-size: 2.5rem;
+    }
+
+    .counter-container-tool {
+        padding: var(--spacing-lg);
+    }
+}

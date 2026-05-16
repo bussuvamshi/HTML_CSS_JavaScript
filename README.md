@@ -12,7 +12,7 @@ HTML_CSS_JavaScript/
 │   └── index.css           # Home page specific styles
 ├── Media/                  # Images and media files
 │   ├── Favicon.png
-│   ├── Keysight logo.png
+│   ├── DevHub-logo.png
 │   └── Good Morning.mp4
 ├── index.html              # Home page
 ├── login.html              # Login/Signup page

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sign up for DevHub - Join our developer community">
+    <meta name="author" content="DevHub Team">
     <title>Sign Up - DevHub</title>
     <link rel="icon" href="Media/Favicon.png" type="image/png">
     <link rel="stylesheet" href="css/global.css">
@@ -98,27 +99,6 @@
         </div>
     </footer>
 
-    <script>
-        function handleSignup(e) {
-            e.preventDefault();
-            const firstname = document.getElementById('firstname').value;
-            const lastname = document.getElementById('lastname').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const confirm = document.getElementById('confirm').value;
-            
-            if (password !== confirm) {
-                alert('Passwords do not match!');
-                return;
-            }
-            
-            if (password.length < 8) {
-                alert('Password must be at least 8 characters!');
-                return;
-            }
-            
-            alert(`Welcome to DevHub, ${firstname}! Check your email at ${email} to verify your account.`);
-        }
-    </script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

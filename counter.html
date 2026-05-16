@@ -7,82 +7,7 @@
     <title>Tools - DevHub</title>
     <link rel="icon" href="Media/Favicon.png" type="image/png">
     <link rel="stylesheet" href="css/global.css">
-    <style>
-        .tools-hero {
-            background: linear-gradient(135deg, var(--color-darker) 0%, #1a1f35 100%);
-            color: var(--color-white);
-            padding: var(--spacing-2xl) var(--spacing-lg);
-            text-align: center;
-        }
-
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-lg);
-            margin: var(--spacing-2xl) 0;
-        }
-
-        .tool-card {
-            background: var(--color-white);
-            padding: var(--spacing-lg);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-md);
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .tool-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .tool-icon {
-            font-size: 3rem;
-            margin-bottom: var(--spacing-md);
-        }
-
-        .counter-container-tool {
-            background: var(--color-lighter);
-            padding: var(--spacing-2xl);
-            border-radius: var(--border-radius-lg);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .counter-display {
-            font-size: 4rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            text-align: center;
-            margin: var(--spacing-lg) 0;
-            padding: var(--spacing-lg);
-            background: var(--color-white);
-            border-radius: var(--border-radius-lg);
-            min-height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .counter-buttons {
-            display: flex;
-            gap: var(--spacing-md);
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .counter-buttons .btn {
-            min-width: 100px;
-        }
-
-        .tool-info {
-            background: var(--color-lighter);
-            padding: var(--spacing-lg);
-            border-radius: var(--border-radius);
-            margin-top: var(--spacing-lg);
-            color: var(--color-gray-500);
-        }
-    </style>
+    <link rel="stylesheet" href="css/tools.css">
 </head>
 <body>
     <header>
@@ -119,37 +44,38 @@
                 <div class="tool-icon">🎨</div>
                 <h3>Color Picker</h3>
                 <p>Convert colors between hex, RGB, and HSL formats</p>
-                <button class="btn btn-sm btn-primary">Coming Soon</button>
+                <button class="btn btn-sm btn-primary" disabled>Coming Soon</button>
             </div>
             <div class="tool-card">
                 <div class="tool-icon">⏱️</div>
                 <h3>Timer</h3>
                 <p>Pomodoro timer and stopwatch for productivity tracking</p>
-                <button class="btn btn-sm btn-primary">Coming Soon</button>
+                <button class="btn btn-sm btn-primary" disabled>Coming Soon</button>
             </div>
         </div>
 
-        <section id="counter-tool" style="margin-top: 80px;">
-            <h2 style="text-align: center; margin-bottom: 40px;">Counter Tool</h2>
+        <section id="counter-tool" class="counter-tool-section">
+            <h2>Counter Tool</h2>
             <div class="counter-container-tool">
-                <div class="counter-display" id="counterDisplay">0</div>
+                <div class="counter-display" id="counter-display">0</div>
                 <div class="counter-buttons">
-                    <button class="btn btn-secondary" onclick="decreaseCounter()">-</button>
-                    <button class="btn btn-outline" onclick="resetCounter()">Reset</button>
-                    <button class="btn btn-success" onclick="increaseCounter()">+</button>
+                    <button id="decrease" class="btn btn-secondary">Decrease</button>
+                    <button id="reset" class="btn btn-outline">Reset</button>
+                    <button id="increase" class="btn btn-success">Increase</button>
                 </div>
                 <div class="tool-info">
                     <p><strong>Current Count:</strong> <span id="currentCount">0</span></p>
-                    <p>Use this tool to keep track of iterations, clicks, or any countable metric.</p>
+                    <p>Use this tool to keep track of iterations, clicks, or any countable metric in your development workflow.</p>
                 </div>
             </div>
 
-            <div style="margin-top: 60px; padding: 40px; background: var(--color-lighter); border-radius: var(--border-radius-lg);">
-                <h3>How to Use</h3>
-                <ul style="line-height: 2;">
-                    <li>Click the <strong>+</strong> button to increase the count</li>
-                    <li>Click the <strong>-</strong> button to decrease the count</li>
+            <div class="usage-guide">
+                <h3>How to Use the Counter</h3>
+                <ul>
+                    <li>Click the <strong>Increase</strong> button to increment the count</li>
+                    <li>Click the <strong>Decrease</strong> button to decrement the count</li>
                     <li>Click the <strong>Reset</strong> button to set the count back to 0</li>
+                    <li>The counter will update in real-time as you click the buttons</li>
                 </ul>
             </div>
         </section>
@@ -190,13 +116,9 @@
         </div>
     </footer>
 
-    <script>
-        let count = 0;
-
-        function increaseCounter() {
-            count++;
-            updateDisplay();
-        }
+    <script src="js/main.js"></script>
+</body>
+</html>
 
         function decreaseCounter() {
             count--;
