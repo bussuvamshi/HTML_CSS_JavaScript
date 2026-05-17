@@ -8,7 +8,6 @@
     <link rel="icon" href="Media/Favicon.png" type="image/png">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/pages.css">
-    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header>
@@ -133,60 +132,8 @@
             </div>
         </div>
     </footer>
-</body>
-</html>
-                <textarea id="message" name="message" placeholder="Tell us more..." required></textarea>
-            </div>
 
-            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
-        </form>
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h4>BussuTech</h4>
-                <p>Your premium platform for learning and building amazing web applications.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Community</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Terms</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 BussuTech. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        function handleContactForm(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            
-            alert(`Thank you, ${name}! We've received your message at ${email}. We'll get back to you soon.`);
-            e.target.reset();
-        }
-    </script>
+    <script src="js/api-client.js" defer></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

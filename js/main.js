@@ -78,7 +78,7 @@ if (nav) {
 // ============================================================================
 
 // Login form handler
-function handleLogin(event) {
+async function handleLogin(event) {
     event.preventDefault();
     
     const email = document.getElementById('email')?.value.trim();
@@ -99,19 +99,28 @@ function handleLogin(event) {
         return false;
     }
     
-    showAlert('Login successful! Redirecting...', 'success');
-    console.log('Login form submitted:', { email });
-    
-    // Simulate API call
-    setTimeout(() => {
-        // window.location.href = 'dashboard.html';
-    }, 1500);
+    try {
+        showAlert('Logging in...', 'info');
+        const response = await loginUser(email, password);
+        
+        // Store user data in localStorage
+        localStorage.setItem('currentUser', JSON.stringify(response.user));
+        
+        showAlert('Login successful! Redirecting...', 'success');
+        console.log('User logged in:', response.user);
+        
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 1500);
+    } catch (error) {
+        showAlert(error.message || 'Login failed. Please try again.', 'danger');
+    }
     
     return false;
 }
 
 // Signup form handler
-function handleSignup(event) {
+async function handleSignup(event) {
     event.preventDefault();
     
     const firstname = document.getElementById('firstname')?.value.trim();
@@ -151,24 +160,41 @@ function handleSignup(event) {
         return false;
     }
     
-    showAlert('Account created successfully! Redirecting...', 'success');
-    console.log('Signup form submitted:', { firstname, lastname, email });
-    
-    // Simulate API call
-    setTimeout(() => {
-        // window.location.href = 'dashboard.html';
-    }, 1500);
+    try {
+        showAlert('Creating account...', 'info');
+        const response = await registerUser({
+            firstName: firstname,
+            lastName: lastname,
+            email: email,
+            password: password,
+            passwordConfirm: confirm,
+            newsletter: document.querySelector('input[name="newsletter"]')?.checked || false
+        });
+        
+        // Store user data in localStorage
+        localStorage.setItem('currentUser', JSON.stringify(response.user));
+        
+        showAlert('Account created successfully! Redirecting...', 'success');
+        console.log('User registered:', response.user);
+        
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 1500);
+    } catch (error) {
+        showAlert(error.message || 'Signup failed. Please try again.', 'danger');
+    }
     
     return false;
 }
 
 // Contact form handler
-function handleContactForm(event) {
+async function handleContactForm(event) {
     event.preventDefault();
     
     const name = document.getElementById('name')?.value.trim();
     const email = document.getElementById('email')?.value.trim();
     const subject = document.getElementById('subject')?.value.trim();
+    const category = document.getElementById('category')?.value || 'general';
     const message = document.getElementById('message')?.value.trim();
     
     if (!name || !email || !subject || !message) {
@@ -181,11 +207,31 @@ function handleContactForm(event) {
         return false;
     }
     
-    showAlert('Message sent successfully! We will get back to you soon.', 'success');
-    console.log('Contact form submitted:', { name, email, subject, message });
+    try {
+        showAlert('Sending message...', 'info');
+        
+        // Get current user ID if logged in
+        const currentUser = localStorage.getItem('currentUser');
+        const userId = currentUser ? JSON.parse(currentUser).id : null;
+        
+        const response = await submitContactForm({
+            name: name,
+            email: email,
+            subject: subject,
+            category: category,
+            message: message,
+            userId: userId
+        });
+        
+        showAlert('Message sent successfully! We will get back to you soon.', 'success');
+        console.log('Contact form submitted:', response.submission);
+        
+        // Reset form
+        event.target.reset();
+    } catch (error) {
+        showAlert(error.message || 'Failed to send message. Please try again.', 'danger');
+    }
     
-    // Reset form
-    event.target.reset();
     return false;
 }
 
