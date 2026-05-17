@@ -1,54 +1,47 @@
-# HTML_CSS_JavaScript Project
+# BussuTech Portal - Web Development Community Platform
 
-A comprehensive web project showcasing HTML, CSS, and JavaScript fundamentals with modern best practices for accessibility, responsive design, and code organization.
+A comprehensive, modern web portal built with HTML, CSS, and JavaScript, showcasing best practices for accessibility, responsive design, and professional code organization. BussuTech is your premier platform for learning, building, and collaborating on web development projects.
 
 ## 📁 Project Structure
 
 ```
-HTML_CSS_JavaScript/
+BussuTech Portal/
 ├── css/
 │   ├── global.css          # Shared styles and design system
-│   ├── login.css           # Login page specific styles
-│   └── index.css           # Home page specific styles
+│   ├── login.css           # Login/Signup page styles
+│   ├── index.css           # Home page specific styles
+│   ├── pages.css           # About/Contact page styles
+│   └── tools.css           # Tools page specific styles
+├── js/
+│   └── main.js             # Centralized form handlers and interactions
 ├── Media/                  # Images and media files
-│   ├── Favicon.png
-│   ├── DevHub-logo.png
-│   └── Good Morning.mp4
+│   ├── Favicon.png         # BussuTech B icon
+│   ├── Good Morning.mp4    # Sample video
+│   └── Server.png          # Server illustration
 ├── index.html              # Home page
-├── login.html              # Login/Signup page
-├── Mywebsite.html          # Clean login form template
-├── CounterProgram.html     # Interactive counter app
-├── CounterProgram.css      # Counter app styles
-├── CounterProgram.js       # Counter app logic
-├── submit_form.php         # Form submission handler (backend)
-└── README.md               # This file
+├── login.html              # User login page
+├── signup.html             # User registration page
+├── about.html              # About us page
+├── contact.html            # Contact form page
+├── counter.html            # Developer tools showcase
+├── README.md               # This file
+└── .gitignore              # Git ignore file
 ```
 
-## 🎯 Features
+## 🎯 BussuTech Portal Features
 
-### 1. **Global Design System**
-   - CSS custom properties (variables) for consistent colors, spacing, and typography
-   - Unified color palette and font stack across all pages
-   - Responsive breakpoints for mobile, tablet, and desktop
-   - Utility classes for common styling patterns
+### 1. **Unified Design System**
+   - CSS custom properties for consistent theming across all pages
+   - Modern tech color palette (Indigo, Pink, Cyan accents)
+   - Mobile-first responsive design
+   - Smooth animations and transitions
 
-### 2. **Home Page (index.html)**
-   - Professional landing page with company information
-   - Interactive product table with semantic HTML
-   - Embedded video player
-   - Professional header and footer
-
-### 3. **Login/Signup Page (login.html)**
-   - Clean, accessible login form
-   - Form validation with HTML5 attributes
-   - Password requirements indicator
-   - Responsive design for all devices
-
-### 4. **Counter Application**
-   - Interactive counter with increase, decrease, and reset buttons
-   - Real-time value display
-   - Modern gradient UI with smooth animations
-   - ARIA labels for screen reader compatibility
+### 2. **Professional Portal Pages**
+   - **Home** — Landing page with feature showcase and stats
+   - **About** — Mission, values, and team information
+   - **Contact** — Multi-channel contact form with validation
+   - **Login/Signup** — User authentication forms with validation
+   - **Tools** — Interactive counter demo and tool showcase
 
 ### 5. **Accessibility Features**
    - Semantic HTML5 elements (`<header>`, `<main>`, `<section>`, `<nav>`, `<footer>`)

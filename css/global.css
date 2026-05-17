@@ -22,6 +22,8 @@
     --color-gray-300: #d1d5db;
     --color-gray-400: #9ca3af;
     --color-gray-500: #6b7280;
+    --color-gray-600: #4b5563;
+    --color-gray-700: #2d3748;
     --color-dark: #1f2937;
     --color-darker: #111827;
     --color-black: #000;
@@ -312,6 +314,27 @@ footer {
 
 .footer-bottom a {
     color: var(--color-primary);
+}
+
+.footer-social {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.footer-social a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-smooth);
+}
+
+.footer-social a:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
 }
 
 /* ============================================================================
